@@ -75,8 +75,8 @@ Vagrant.configure("2") do |config|
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   config.omnibus.chef_version = 'latest'
+  config.berkshelf.enabled = true
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "./cookbooks"
     chef.add_recipe "apt"
     chef.add_recipe "build-essential"
     chef.add_recipe "ohai"
