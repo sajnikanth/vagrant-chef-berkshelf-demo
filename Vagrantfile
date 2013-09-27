@@ -78,6 +78,10 @@ Vagrant.configure("2") do |config|
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "./cookbooks"
     chef.add_recipe "apt"
+    chef.add_recipe "build-essential"
+    chef.add_recipe "ohai"
+    chef.add_recipe "runit"
+    chef.add_recipe "yum"
     chef.add_recipe "nginx"
   # chef.roles_path = "../my-recipes/roles"
   # chef.data_bags_path = "../my-recipes/data_bags"
