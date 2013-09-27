@@ -77,6 +77,7 @@ Vagrant.configure("2") do |config|
   config.omnibus.chef_version = 'latest'
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "./cookbooks"
+    chef.add_recipe "apt"
     chef.add_recipe "nginx"
   # chef.roles_path = "../my-recipes/roles"
   # chef.data_bags_path = "../my-recipes/data_bags"
